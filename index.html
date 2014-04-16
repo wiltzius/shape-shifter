@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="bower_components/platform/platform.js"></script>
+  <link rel="import" href="bower_components/shape-shifter/shape-shifter.html">
+</head>
+<body>
+  <polymer-element name="shifter-demo" touch-action="none">
+  <template>
+    <style>
+      #hero {
+        display: block;
+        margin: 30px auto;
+        width: 300px;
+        height: 300px;
+      }
+      shape-shifter {
+        display: inline-block;
+      }
+    </style>
+    <div>
+      <shape-shifter id="hero" shape="{{ shape }}"></shape-shifter>
+      <shape-shifter on-mouseover="{{ pickShape }}" shape="plus" ></shape-shifter>
+      <shape-shifter on-mouseover="{{ pickShape }}" shape="cancel" ></shape-shifter>
+      <shape-shifter on-mouseover="{{ pickShape }}" shape="check" ></shape-shifter>
+      <shape-shifter on-mouseover="{{ pickShape }}" shape="menu" ></shape-shifter>
+      <shape-shifter on-mouseover="{{ pickShape }}" shape="more" ></shape-shifter>
+      <shape-shifter on-mouseover="{{ pickShape }}" shape="right" ></shape-shifter>
+      <shape-shifter on-mouseover="{{ pickShape }}" shape="left" ></shape-shifter>
+      <shape-shifter on-mouseover="{{ pickShape }}" shape="up" ></shape-shifter>
+      <shape-shifter on-mouseover="{{ pickShape }}" shape="down" ></shape-shifter>
+    </div>
+  </template>
+  <script>
+    Polymer('shifter-demo', {
+      shape: 'plus',
+      pickShape: function(e, target, sender) {
+        this.shape = sender.shape;
+      }
+    });
+  </script>
+  </polymer-element>
+  <shifter-demo></shifter-demo>
+</body>
+</html>
