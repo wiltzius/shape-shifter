@@ -32,6 +32,5 @@
   },
   "_source": "git://github.com/MaKleSoft/shape-shifter.git",
   "_target": "~0.1.1",
-  "_originalSource": "shape-shifter",
-  "_direct": true
+  "_originalSource": "shape-shifter"
 }
